@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteRule ^login$ login.php
+RewriteRule ^signup$ signup.php
+RewriteRule ^home$ index.php

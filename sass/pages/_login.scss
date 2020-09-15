@@ -1,0 +1,35 @@
+#login {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  > div {
+    width: 38rem;
+    margin-top: 20rem;
+
+    form > div {
+      margin-bottom: 2rem;
+    }
+
+    svg {
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      fill: $white;
+      margin: auto;
+    }
+
+    .primary {
+      font-size: 3rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      font-size: 1.3rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+  }
+}

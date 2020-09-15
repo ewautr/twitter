@@ -1,0 +1,38 @@
+.btn {
+  width: 90%;
+  padding: 0.1rem 0px;
+  border: none;
+  border-radius: 4rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: $white;
+  background: $blue;
+  max-height: 5rem;
+  height: 100%;
+  outline: none;
+  cursor: pointer;
+
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    background: $dark-blue;
+  }
+
+  &.inactive,
+  &:disabled {
+    opacity: 0.5;
+    &:hover {
+      background: $blue;
+    }
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid $blue;
+  color: $blue;
+
+  &:hover {
+    background: rgba($blue, 0.1);
+  }
+}

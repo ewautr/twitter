@@ -1,0 +1,71 @@
+#profile {
+  header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    grid-gap: 1.5rem;
+    padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    background: $background;
+    border-bottom: 1px solid $border;
+    margin-bottom: -1px;
+    z-index: 10;
+
+    svg {
+      fill: $blue;
+    }
+  }
+
+  & > .top {
+    height: 30rem;
+    position: relative;
+
+    .cover-image {
+      display: block;
+      height: calc(30rem - (14rem / 2));
+      width: 100%;
+      background: gray;
+    }
+
+    .profile-image {
+      width: 14rem;
+      height: 14rem;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 0;
+      left: 1rem;
+    }
+
+    .btn {
+      position: absolute;
+      bottom: 0;
+      right: 1rem;
+      width: 13rem;
+      height: 4rem;
+    }
+  }
+
+  .user-info {
+    padding: 1rem;
+
+    * {
+      margin-bottom: 0.7rem;
+    }
+
+    & > div {
+      h2 {
+        display: inline-block;
+        width: max-content;
+        margin-right: 1rem;
+        b {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .tweets {
+    width: 100%;
+  }
+}

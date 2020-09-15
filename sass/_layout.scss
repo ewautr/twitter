@@ -1,0 +1,25 @@
+#page {
+  display: grid;
+  //grid-template-columns: 10fr 25fr 12fr;
+  grid-template-columns: 275px 600px 350px;
+  gap: 1rem;
+  width: max-content;
+  min-height: 100vh;
+  margin: auto;
+  //padding: 0px 10%;
+}
+
+#middle {
+  border-left: 1px solid $border;
+  border-right: 1px solid $border;
+  .subpage {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1265px) {
+  #page {
+    grid-template-columns: 10fr 25fr 12fr;
+    width: 100%;
+  }
+}

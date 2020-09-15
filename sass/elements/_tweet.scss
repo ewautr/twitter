@@ -1,0 +1,158 @@
+.tweet {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  padding: 1.5rem;
+  grid-gap: 1.5rem;
+  border-bottom: 1px solid $border;
+  background: transparent;
+  cursor: pointer;
+
+  transition: all 0.1s ease-in;
+  position: relative;
+
+  &:hover {
+    background: $hover-bg;
+  }
+
+  .more {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    fill: rgba($white, 0.5);
+    z-index: 2;
+    > svg {
+      position: relative;
+      z-index: 1;
+    }
+    &.show {
+      display: block;
+    }
+
+    &-box {
+      display: none;
+
+      position: absolute;
+      top: 4rem;
+      right: 1rem;
+      width: 15rem;
+      background: $background;
+      box-shadow: rgba(136, 153, 166, 0.2) 0px 0px 15px,
+        rgba(136, 153, 166, 0.15) 0px 0px 3px 1px;
+      border-radius: 6px;
+      padding: 1rem;
+
+      z-index: 100;
+
+      &.show {
+        display: block;
+      }
+
+      a {
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 18px 1fr;
+        align-items: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        border-radius: $radius;
+
+        &:first-child {
+          color: $blue;
+          fill: $blue;
+
+          &:hover {
+            background: rgba($blue, 0.1);
+          }
+        }
+        &:last-child {
+          color: $red;
+          fill: $red;
+
+          &:hover {
+            background: rgba($red, 0.1);
+          }
+        }
+      }
+    }
+  }
+
+  img {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+  }
+
+  .body {
+    .top {
+      * {
+        display: inline-block;
+        width: max-content;
+        font-size: 15px;
+      }
+    }
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      a {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        grid-gap: 0.5rem;
+        align-items: center;
+        justify-items: left;
+        font-size: 1.3rem;
+        color: rgba($white, 0.5);
+        svg {
+          width: 29px;
+          height: 29px;
+          padding: 5px;
+          fill: rgba($white, 0.5);
+          border-radius: 50%;
+        }
+
+        &.comments:hover {
+          color: $blue;
+
+          & svg {
+            fill: $blue;
+            background: rgba($white, 0.1);
+          }
+        }
+        &.likes:hover {
+          color: $red;
+
+          & svg {
+            fill: $red;
+            background: rgba($white, 0.1);
+          }
+        }
+        &.retweets:hover {
+          color: $green;
+
+          & svg {
+            fill: $green;
+            background: rgba($white, 0.1);
+          }
+        }
+        &.bookmarks:hover {
+          color: $blue;
+
+          & svg {
+            fill: $blue;
+            background: rgba($white, 0.1);
+          }
+        }
+        &.bookmarks.bookmarked {
+          color: $blue;
+          svg {
+            fill: $blue;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.filters {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-decoration: none;
+  list-style: none;
+  border-bottom: 1px solid $border;
+  color: rgba($white, 0.5);
+  font-size: 1.5rem;
+  font-weight: 700;
+  justify-items: center;
+
+  li {
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    &.active {
+      border-bottom: 2px solid $blue;
+      color: $blue;
+    }
+  }
+}

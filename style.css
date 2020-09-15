@@ -1,0 +1,749 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  height: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  font-size: 62.5%; }
+
+body {
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  background: #15202b;
+  color: #fff; }
+
+#page {
+  display: grid;
+  grid-template-columns: 275px 600px 350px;
+  gap: 1rem;
+  width: max-content;
+  min-height: 100vh;
+  margin: auto; }
+
+#middle {
+  border-left: 1px solid #38444d;
+  border-right: 1px solid #38444d; }
+  #middle .subpage {
+    display: none; }
+
+@media only screen and (max-width: 1265px) {
+  #page {
+    grid-template-columns: 10fr 25fr 12fr;
+    width: 100%; } }
+
+a,
+a:active,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease-in; }
+
+svg {
+  transition: all 0.2s ease-in; }
+
+li {
+  text-decoration: none;
+  list-style: none; }
+
+.primary {
+  font-size: 1.9rem;
+  font-weight: 700; }
+
+.secondary {
+  font-size: 1.5rem;
+  opacity: 0.5;
+  font-weight: 400; }
+
+.blue {
+  color: #1da1f2 !important; }
+
+p {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 400;
+  margin: 0.5rem 0; }
+
+#left {
+  display: grid;
+  grid-template-rows: repeat(10, 7%) 1fr;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 100; }
+  #left div {
+    align-items: center;
+    cursor: pointer; }
+    #left div:nth-child(3), #left div:nth-child(5), #left div:nth-child(7), #left div:nth-child(9) {
+      opacity: 0.1; }
+    #left div:hover > a {
+      background: #202e3a;
+      color: #1da1f2; }
+      #left div:hover > a > svg {
+        fill: #1da1f2; }
+    #left div a {
+      display: grid;
+      width: max-content;
+      max-width: 100%;
+      height: 76%;
+      padding: 0 1.5rem;
+      font-size: 1.9rem;
+      font-weight: 700;
+      grid-template-columns: 24px 1fr;
+      gap: 1.7rem;
+      align-items: center;
+      border-radius: 50px;
+      transition: 0.1s ease-in-out; }
+      #left div a svg {
+        fill: #fff;
+        transition: 0.1s ease-in-out; }
+  #left .active {
+    color: #1da1f2; }
+    #left .active svg {
+      fill: #1da1f2; }
+  #left > a {
+    height: max-content;
+    align-self: end; }
+  #left .profile {
+    display: grid;
+    grid-template-columns: 3fr 10fr 1fr;
+    grid-gap: 0.7rem;
+    align-items: center;
+    padding-bottom: 3rem;
+    font-size: 0.8rem; }
+    #left .profile p {
+      margin: 0; }
+    #left .profile .primary {
+      font-size: 1.5rem;
+      margin: 0;
+      display: block;
+      padding: 0; }
+    #left .profile img {
+      width: 90%;
+      border-radius: 50%; }
+    #left .profile svg {
+      fill: #fff;
+      display: none; }
+  #left .modal {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 5rem;
+    background: #15202b;
+    border-radius: 15px; }
+    #left .modal .close {
+      display: block;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      width: 24px;
+      height: 24px;
+      padding: 0; }
+      #left .modal .close svg {
+        fill: #1da1f2; }
+    #left .modal-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.15);
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.1s all ease-in; }
+    #left .modal .post-tweet {
+      width: 600px;
+      height: 29rem;
+      border-bottom: 0;
+      padding-top: 1rem; }
+      #left .modal .post-tweet > div {
+        grid-template-rows: 1fr 50px; }
+        #left .modal .post-tweet > div .bottom {
+          border-top: 1px solid #38444d;
+          padding-top: 10px; }
+
+#right {
+  position: sticky;
+  top: 0;
+  height: 100vh; }
+
+.search {
+  width: 100%;
+  height: 3.5rem;
+  margin-top: 1rem;
+  position: relative;
+  border-radius: 30px; }
+  .search svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    opacity: 0.5; }
+  .search input:focus + svg {
+    fill: #1da1f2; }
+  .search input {
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
+    padding-left: calc(2rem + 20px);
+    outline: none;
+    color: #fff;
+    border-radius: 30px; }
+    .search input::placeholder {
+      color: #fff;
+      opacity: 0.5;
+      font-weight: 400; }
+    .search input:focus {
+      border: 1px solid #1da1f2;
+      background: transparent; }
+
+.box {
+  width: 100%;
+  margin-top: 2rem;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #192734; }
+  .box .top {
+    border-bottom: 1px solid #38444d;
+    padding: 1.5rem; }
+  .box .item {
+    border-bottom: 1px solid #38444d;
+    padding: 1.5rem;
+    cursor: pointer; }
+    .box .item:hover {
+      background: #202e3a; }
+    .box .item .secondary {
+      font-size: 1.3rem; }
+    .box .item .primary {
+      font-size: 1.5rem;
+      margin-bottom: 1rem; }
+  .box .bottom {
+    width: 100%;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in; }
+    .box .bottom:hover {
+      background: #202e3a; }
+    .box .bottom p {
+      font-size: 1.5rem;
+      color: #1da1f2;
+      font-weight: 400; }
+
+.box.follow-suggestions .item {
+  display: grid;
+  grid-template-columns: 47px 1fr 70px;
+  grid-gap: 1rem; }
+  .box.follow-suggestions .item .primary {
+    margin: 0; }
+  .box.follow-suggestions .item .secondary {
+    font-size: 1.5rem; }
+  .box.follow-suggestions .item img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; }
+  .box.follow-suggestions .item button {
+    width: 100%;
+    height: 3.2rem; }
+
+#home header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  background: #15202b;
+  border-bottom: 1px solid #38444d;
+  margin-bottom: -1px;
+  z-index: 10; }
+  #home header svg {
+    fill: #1da1f2; }
+
+#profile header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  grid-gap: 1.5rem;
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  background: #15202b;
+  border-bottom: 1px solid #38444d;
+  margin-bottom: -1px;
+  z-index: 10; }
+  #profile header svg {
+    fill: #1da1f2; }
+
+#profile > .top {
+  height: 30rem;
+  position: relative; }
+  #profile > .top .cover-image {
+    display: block;
+    height: calc(30rem - (14rem / 2));
+    width: 100%;
+    background: gray; }
+  #profile > .top .profile-image {
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 1rem; }
+  #profile > .top .btn {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    width: 13rem;
+    height: 4rem; }
+
+#profile .user-info {
+  padding: 1rem; }
+  #profile .user-info * {
+    margin-bottom: 0.7rem; }
+  #profile .user-info > div h2 {
+    display: inline-block;
+    width: max-content;
+    margin-right: 1rem; }
+    #profile .user-info > div h2 b {
+      opacity: 1; }
+
+#profile .tweets {
+  width: 100%; }
+
+#notifications header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  background: #15202b;
+  border-bottom: 1px solid #38444d;
+  margin-bottom: -1px;
+  z-index: 10; }
+  #notifications header svg {
+    fill: #1da1f2; }
+
+#notifications .follows {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  padding: 1.5rem;
+  grid-gap: 1.5rem;
+  border-bottom: 1px solid #38444d;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.1s ease-in; }
+  #notifications .follows:hover {
+    background: #202e3a; }
+  #notifications .follows > svg {
+    fill: #1da1f2;
+    width: 3rem;
+    height: 3rem;
+    justify-self: right;
+    align-self: baseline; }
+  #notifications .follows .profiles img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+    border-radius: 50%; }
+
+#bookmarks header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  padding: 15px;
+  border-bottom: 1px solid #38444d;
+  z-index: 10; }
+  #bookmarks header svg {
+    fill: #1da1f2; }
+
+.btn {
+  width: 90%;
+  padding: 0.1rem 0px;
+  border: none;
+  border-radius: 4rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  background: #1da1f2;
+  max-height: 5rem;
+  height: 100%;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in; }
+  .btn:hover {
+    background: #1385cc; }
+  .btn.inactive, .btn:disabled {
+    opacity: 0.5; }
+    .btn.inactive:hover, .btn:disabled:hover {
+      background: #1da1f2; }
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #1da1f2;
+  color: #1da1f2; }
+  .btn-outline:hover {
+    background: rgba(29, 161, 242, 0.1); }
+
+.modal {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 5rem;
+  background: #15202b;
+  border-radius: 15px; }
+  .modal .close {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 24px;
+    height: 24px;
+    padding: 0; }
+    .modal .close svg {
+      fill: #1da1f2; }
+  .modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.1s all ease-in; }
+
+#newTweetId {
+  display: none; }
+
+.post-tweet {
+  width: 100%;
+  border-top: 1px solid #38444d;
+  border-bottom: 10px solid #38444d;
+  display: grid;
+  grid-template-columns: 0.8fr 8fr;
+  padding: 1.5rem;
+  grid-gap: 1.5rem; }
+  .post-tweet img {
+    border-radius: 50%;
+    width: 100%;
+    height: auto; }
+  .post-tweet > div {
+    display: grid;
+    grid-template-rows: 1fr 1fr; }
+    .post-tweet > div textarea {
+      width: 100%;
+      height: 100%;
+      padding-top: 1rem;
+      appearance: none;
+      outline: none;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1.9rem;
+      font-family: Roboto, sans-serif;
+      resize: none; }
+      .post-tweet > div textarea::placeholder {
+        font-weight: 400;
+        font-size: 1.9rem;
+        color: rgba(255, 255, 255, 0.5); }
+    .post-tweet > div .bottom {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      justify-items: left;
+      align-items: end; }
+      .post-tweet > div .bottom .btn {
+        height: 3.5rem;
+        width: 9rem; }
+      .post-tweet > div .bottom svg {
+        width: 24px;
+        height: 24px;
+        fill: #1da1f2; }
+
+.tweet {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  padding: 1.5rem;
+  grid-gap: 1.5rem;
+  border-bottom: 1px solid #38444d;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+  position: relative; }
+  .tweet:hover {
+    background: #202e3a; }
+  .tweet .more {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    fill: rgba(255, 255, 255, 0.5);
+    z-index: 2; }
+    .tweet .more > svg {
+      position: relative;
+      z-index: 1; }
+    .tweet .more.show {
+      display: block; }
+    .tweet .more-box {
+      display: none;
+      position: absolute;
+      top: 4rem;
+      right: 1rem;
+      width: 15rem;
+      background: #15202b;
+      box-shadow: rgba(136, 153, 166, 0.2) 0px 0px 15px, rgba(136, 153, 166, 0.15) 0px 0px 3px 1px;
+      border-radius: 6px;
+      padding: 1rem;
+      z-index: 100; }
+      .tweet .more-box.show {
+        display: block; }
+      .tweet .more-box a {
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 18px 1fr;
+        align-items: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        border-radius: 15px; }
+        .tweet .more-box a:first-child {
+          color: #1da1f2;
+          fill: #1da1f2; }
+          .tweet .more-box a:first-child:hover {
+            background: rgba(29, 161, 242, 0.1); }
+        .tweet .more-box a:last-child {
+          color: #e0245e;
+          fill: #e0245e; }
+          .tweet .more-box a:last-child:hover {
+            background: rgba(224, 36, 94, 0.1); }
+  .tweet img {
+    border-radius: 50%;
+    width: 100%;
+    height: auto; }
+  .tweet .body .top * {
+    display: inline-block;
+    width: max-content;
+    font-size: 15px; }
+  .tweet .body .actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); }
+    .tweet .body .actions a {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      grid-gap: 0.5rem;
+      align-items: center;
+      justify-items: left;
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.5); }
+      .tweet .body .actions a svg {
+        width: 29px;
+        height: 29px;
+        padding: 5px;
+        fill: rgba(255, 255, 255, 0.5);
+        border-radius: 50%; }
+      .tweet .body .actions a.comments:hover {
+        color: #1da1f2; }
+        .tweet .body .actions a.comments:hover svg {
+          fill: #1da1f2;
+          background: rgba(255, 255, 255, 0.1); }
+      .tweet .body .actions a.likes:hover {
+        color: #e0245e; }
+        .tweet .body .actions a.likes:hover svg {
+          fill: #e0245e;
+          background: rgba(255, 255, 255, 0.1); }
+      .tweet .body .actions a.retweets:hover {
+        color: #59bb6d; }
+        .tweet .body .actions a.retweets:hover svg {
+          fill: #59bb6d;
+          background: rgba(255, 255, 255, 0.1); }
+      .tweet .body .actions a.bookmarks:hover {
+        color: #1da1f2; }
+        .tweet .body .actions a.bookmarks:hover svg {
+          fill: #1da1f2;
+          background: rgba(255, 255, 255, 0.1); }
+      .tweet .body .actions a.bookmarks.bookmarked {
+        color: #1da1f2; }
+        .tweet .body .actions a.bookmarks.bookmarked svg {
+          fill: #1da1f2; }
+
+.filters {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-decoration: none;
+  list-style: none;
+  border-bottom: 1px solid #38444d;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  font-weight: 700;
+  justify-items: center; }
+  .filters li {
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    width: 100%;
+    text-align: center;
+    cursor: pointer; }
+    .filters li.active {
+      border-bottom: 2px solid #1da1f2;
+      color: #1da1f2; }
+
+form.entry-form {
+  width: 100%; }
+  form.entry-form > div {
+    position: relative; }
+    form.entry-form > div.invalid input {
+      border-bottom: 2px solid #e0245e; }
+    form.entry-form > div.invalid label:focus,
+    form.entry-form > div.invalid label {
+      color: #e0245e !important; }
+    form.entry-form > div.invalid p {
+      visibility: visible;
+      opacity: 1;
+      color: #e0245e; }
+  form.entry-form input {
+    width: 100%;
+    height: 7rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    padding-top: 3.2rem;
+    appearance: none;
+    border-radius: none;
+    outline: none;
+    background: rgba(29, 161, 242, 0.05);
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-weight: 700;
+    font-size: 1.9rem; }
+    form.entry-form input:focus {
+      border-bottom: 2px solid #1da1f2; }
+      form.entry-form input:focus + label {
+        color: #1da1f2; }
+    form.entry-form input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 300;
+      font-size: 1.5rem; }
+  form.entry-form label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.5); }
+  form.entry-form p {
+    font-size: 1.5rem;
+    color: #e0245e;
+    font-weight: 400;
+    margin: 0;
+    margin-top: -13px;
+    margin-left: 1rem;
+    transition: 0.1s all ease-in;
+    visibility: hidden;
+    opacity: 0; }
+  form.entry-form .btn {
+    width: 100%;
+    height: 5rem; }
+
+#login {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-items: center; }
+  #login > div {
+    width: 38rem;
+    margin-top: 20rem; }
+    #login > div form > div {
+      margin-bottom: 2rem; }
+    #login > div svg {
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      fill: #fff;
+      margin: auto; }
+    #login > div .primary {
+      font-size: 3rem;
+      margin: 2rem 0;
+      text-align: center; }
+    #login > div a {
+      display: block;
+      font-size: 1.3rem;
+      margin: 2rem 0;
+      text-align: center; }
+
+#signup-landingpage {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr; }
+  #signup-landingpage .visual {
+    background: #1da1f2; }
+  #signup-landingpage .choose-method {
+    display: grid;
+    align-items: center;
+    justify-items: center; }
+    #signup-landingpage .choose-method > div {
+      width: 38rem;
+      height: 40rem; }
+      #signup-landingpage .choose-method > div svg {
+        width: 4rem;
+        height: 4rem;
+        fill: #fff; }
+      #signup-landingpage .choose-method > div .primary {
+        font-size: 3rem;
+        margin: 2rem 0; }
+      #signup-landingpage .choose-method > div .secondary {
+        font-weight: 700;
+        font-size: 1.5rem;
+        opacity: 1;
+        margin-top: 5rem;
+        margin-bottom: 2rem; }
+      #signup-landingpage .choose-method > div .btn {
+        margin-bottom: 2rem; }
+    #signup-landingpage .choose-method .signup-modal {
+      width: 50%;
+      height: auto;
+      padding: 3rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: grid;
+      grid-gap: 3rem;
+      border-radius: 15px;
+      background: #15202b; }
+      #signup-landingpage .choose-method .signup-modal-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.4);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.1s ease-in; }
+      #signup-landingpage .choose-method .signup-modal svg {
+        display: block;
+        margin: auto; }
+      #signup-landingpage .choose-method .signup-modal form > *:not(:last-child) {
+        margin-bottom: 3rem; }
+      #signup-landingpage .choose-method .signup-modal .primary {
+        margin: 0;
+        font-size: 1.9rem; }

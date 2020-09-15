@@ -1,0 +1,85 @@
+#signup-landingpage {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .visual {
+    background: $blue;
+  }
+
+  .choose-method {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    > div {
+      width: 38rem;
+      height: 40rem;
+
+      svg {
+        width: 4rem;
+        height: 4rem;
+        fill: $white;
+      }
+
+      .primary {
+        font-size: 3rem;
+        margin: 2rem 0;
+      }
+
+      .secondary {
+        font-weight: 700;
+        font-size: 1.5rem;
+        opacity: 1;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+      }
+
+      .btn {
+        margin-bottom: 2rem;
+      }
+    }
+    .signup-modal {
+      width: 50%;
+      height: auto;
+      padding: 3rem;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: grid;
+      grid-gap: 3rem;
+
+      border-radius: 15px;
+      background: $background;
+
+      &-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba($white, 0.4);
+
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.1s ease-in;
+      }
+
+      svg {
+        display: block;
+        margin: auto;
+      }
+
+      form > *:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+      .primary {
+        margin: 0;
+        font-size: 1.9rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+#notifications {
+  header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 24px;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    background: $background;
+    border-bottom: 1px solid $border;
+    margin-bottom: -1px;
+    z-index: 10;
+
+    svg {
+      fill: $blue;
+    }
+  }
+
+  .follows {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    padding: 1.5rem;
+    grid-gap: 1.5rem;
+    border-bottom: 1px solid $border;
+    background: transparent;
+    cursor: pointer;
+
+    transition: all 0.1s ease-in;
+
+    &:hover {
+      background: $hover-bg;
+    }
+
+    > svg {
+      fill: $blue;
+      width: 3rem;
+      height: 3rem;
+      justify-self: right;
+      align-self: baseline;
+    }
+
+    .profiles {
+      img {
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1rem;
+        border-radius: 50%;
+      }
+    }
+  }
+}

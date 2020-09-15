@@ -1,0 +1,38 @@
+a,
+a:active,
+a:visited {
+  color: $white;
+  text-decoration: none;
+  transition: all 0.2s ease-in;
+}
+
+svg {
+  transition: all 0.2s ease-in;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.primary {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.secondary {
+  font-size: 1.5rem;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.blue {
+  color: $blue !important;
+}
+
+p {
+  font-size: 1.5rem;
+  color: $white;
+  font-weight: 400;
+  margin: 0.5rem 0;
+}
