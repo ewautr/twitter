@@ -1,12 +1,10 @@
 #page {
   display: grid;
-  //grid-template-columns: 10fr 25fr 12fr;
   grid-template-columns: 275px 600px 350px;
-  gap: 1rem;
+  gap: 1.5rem;
   width: max-content;
   min-height: 100vh;
   margin: auto;
-  //padding: 0px 10%;
 }
 
 #middle {

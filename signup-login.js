@@ -56,3 +56,39 @@ function validateRepeatedPassword() {
     }
   }, 1000);
 }
+
+//CREATE NEW USER
+async function signup() {
+  var form = event.target;
+  var connection = await fetch("api/api-signup.php", {
+    method: "POST",
+    body: new FormData(form)
+  });
+  var sResponse = await connection.text();
+  console.log(JSON.parse(sResponse));
+
+  if (connection.status != 200) {
+    console.log("contact admin");
+    return;
+  }
+
+  location.href = "/twitter/home";
+}
+
+//LOG IN USER
+async function login() {
+  var form = event.target;
+  var connection = await fetch("api/api-login.php", {
+    method: "POST",
+    body: new FormData(form)
+  });
+  var sResponse = await connection.text();
+  console.log(JSON.parse(sResponse));
+
+  if (connection.status != 200) {
+    console.log("contact admin");
+    return;
+  }
+
+  location.href = "/twitter/home";
+}

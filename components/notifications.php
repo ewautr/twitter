@@ -20,7 +20,7 @@
                           <h3 class="secondary">@jadams</h3>
                           <h4 class="secondary">1 min</h4>
                         </div>
-                        <h3 class="secondary">replying to <span class="blue">@<?= $_SESSION['username'] ?></span></h3>
+                        <h3 class="secondary">replying to <span class="blue">@<?= $_SESSION['sUserName'] ?></span></h3>
                         <p>
                           I love it!
                         </p>

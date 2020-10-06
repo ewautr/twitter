@@ -21,9 +21,9 @@
             <button class="btn btn-outline">Edit profile</button>
           </div>
           <div class="user-info">
-            <h1 class="primary userFullName"><?= $_SESSION['username'] ?></h1>
-            <h2 class="secondary userUsername">@<?= $_SESSION['username'] ?></h2>
-            <h2 class="secondary userDateJoined">Joined <?= $_SESSION['dateJoined'] ?></h2>
+            <h1 class="primary userFullName"><?= $_SESSION['sUserName'] ?></h1>
+            <h2 class="secondary userUsername">@<?= $_SESSION['sUserEmail'] ?></h2>
+            <h2 class="secondary userDateJoined">Joined 11.02.2019</h2>
             <div>
               <h2 class="secondary userFollowed"><b>22</b> Following</h2>
               <h2 class="secondary userFollowers"><b>22</b> Followers</h2>

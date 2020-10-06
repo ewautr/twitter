@@ -7,7 +7,7 @@
               ></path>
             </svg>
           </header>
-          <form action="" class="post-tweet" id="post-tweet" onsubmit="createTweet('newTweet', 'post-tweet'); return false">
+          <form class="post-tweet" id="post-tweet" onsubmit="tweet(); return false">
             <img
               alt="profile image"
               class="profile-img"
@@ -15,7 +15,7 @@
             />
             <div>
               <textarea
-                name="newTweet"
+                name="tweet"
                 id="newTweet"
                 placeholder="What's happening?"
                 type="text"

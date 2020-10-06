@@ -110,7 +110,7 @@
             <p class="primary" href="logout-action.php">
               Log out
             </p>
-            <p class="secondary">@<?= $_SESSION['username'] ?></p>
+            <p class="secondary">@<?= $_SESSION['sUserName'] ?></p>
           </div>
           <svg viewbox="0 0 24 24">
             <path
