@@ -213,6 +213,28 @@ p {
       border: 1px solid #1da1f2;
       background: transparent; }
 
+#search-results {
+  opacity: 0;
+  background: #192734;
+  border-radius: 5px;
+  box-shadow: rgba(136, 153, 166, 0.2) 0px 0px 15px, rgba(136, 153, 166, 0.15) 0px 0px 3px 1px;
+  position: absolute;
+  width: calc(100% - 1.5rem);
+  z-index: 100; }
+  #search-results .result {
+    cursor: pointer;
+    border-top: 1px solid #38444d;
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    padding: 1rem 0; }
+    #search-results .result img {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 100%;
+      margin: auto; }
+    #search-results .result > div p {
+      font-size: 1.5rem; }
+
 .box {
   width: 100%;
   margin-top: 2rem;
@@ -222,6 +244,9 @@ p {
   .box .top {
     border-bottom: 1px solid #38444d;
     padding: 1.5rem; }
+  .box #trends {
+    overflow: hidden;
+    height: 205px; }
   .box .item {
     border-bottom: 1px solid #38444d;
     padding: 1.5rem;
@@ -245,9 +270,13 @@ p {
       color: #1da1f2;
       font-weight: 400; }
 
+.box.follow-suggestions #follow-suggestion-items {
+  overflow: hidden;
+  height: 15.7rem; }
+
 .box.follow-suggestions .item {
   display: grid;
-  grid-template-columns: 47px 1fr 70px;
+  grid-template-columns: 47px 1fr max-content;
   grid-gap: 1rem; }
   .box.follow-suggestions .item .primary {
     margin: 0; }
@@ -259,7 +288,8 @@ p {
     border-radius: 50%; }
   .box.follow-suggestions .item button {
     width: 100%;
-    height: 3.2rem; }
+    height: 3.2rem;
+    padding: 0 1rem; }
 
 #home header {
   width: 100%;
@@ -304,7 +334,8 @@ p {
     border-radius: 50%;
     position: absolute;
     bottom: 0;
-    left: 1rem; }
+    left: 1rem;
+    border: 5px solid #15202b; }
   #profile > .top .btn {
     position: absolute;
     bottom: 0;
@@ -325,6 +356,12 @@ p {
 
 #profile .tweets {
   width: 100%; }
+  #profile .tweets #profile-tweets > h3 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 17px;
+    margin-top: 6rem;
+    opacity: 0.5; }
 
 #notifications header {
   width: 100%;
@@ -545,6 +582,19 @@ p {
     display: inline-block;
     width: max-content;
     font-size: 15px; }
+  .tweet .body .top h3 {
+    position: relative;
+    padding-right: 0.6rem;
+    margin-right: 0.6rem; }
+    .tweet .body .top h3:before {
+      content: "";
+      position: absolute;
+      right: -3px;
+      top: calc(50% - 1.5px);
+      width: 3px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 100%; }
   .tweet .body .actions {
     display: grid;
     grid-template-columns: repeat(4, 1fr); }
@@ -586,6 +636,10 @@ p {
         color: #1da1f2; }
         .tweet .body .actions a.bookmarks.bookmarked svg {
           fill: #1da1f2; }
+      .tweet .body .actions a.likes.liked {
+        color: #e0245e; }
+        .tweet .body .actions a.likes.liked svg {
+          fill: #e0245e; }
 
 .filters {
   width: 100%;
@@ -721,6 +775,7 @@ form.entry-form {
         margin-bottom: 2rem; }
     #signup-landingpage .choose-method .signup-modal {
       width: 50%;
+      max-width: 560px;
       height: auto;
       padding: 3rem;
       position: absolute;
@@ -731,6 +786,13 @@ form.entry-form {
       grid-gap: 3rem;
       border-radius: 15px;
       background: #15202b; }
+      #signup-landingpage .choose-method .signup-modal > .close {
+        position: absolute;
+        top: 1rem;
+        left: 1rem; }
+        #signup-landingpage .choose-method .signup-modal > .close svg {
+          width: 3rem;
+          height: 3rem; }
       #signup-landingpage .choose-method .signup-modal-wrapper {
         position: absolute;
         top: 0;

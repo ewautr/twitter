@@ -35,6 +35,7 @@
       position: absolute;
       bottom: 0;
       left: 1rem;
+      border: 5px solid $background;
     }
 
     .btn {
@@ -67,5 +68,12 @@
 
   .tweets {
     width: 100%;
+    #profile-tweets > h3 {
+      text-align: center;
+      font-weight: 400;
+      font-size: 17px;
+      margin-top: 6rem;
+      opacity: 0.5;
+    }
   }
 }

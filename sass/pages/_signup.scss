@@ -42,6 +42,7 @@
     }
     .signup-modal {
       width: 50%;
+      max-width: 560px;
       height: auto;
       padding: 3rem;
 
@@ -54,6 +55,16 @@
 
       border-radius: 15px;
       background: $background;
+
+      > .close {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        svg {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
 
       &-wrapper {
         position: absolute;

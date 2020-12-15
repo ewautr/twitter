@@ -67,7 +67,7 @@ async function signup() {
   var sResponse = await connection.text();
   console.log(JSON.parse(sResponse));
 
-  if (connection.status != 200) {
+  if (!connection.ok) {
     console.log("contact admin");
     return;
   }
@@ -82,13 +82,11 @@ async function login() {
     method: "POST",
     body: new FormData(form)
   });
-  var sResponse = await connection.text();
-  console.log(JSON.parse(sResponse));
-
-  if (connection.status != 200) {
+  if (!connection.ok) {
     console.log("contact admin");
     return;
   }
-
+  var sResponse = await connection.text();
+  console.log(JSON.parse(sResponse));
   location.href = "/twitter/home";
 }

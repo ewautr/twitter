@@ -93,6 +93,21 @@
         width: max-content;
         font-size: 15px;
       }
+      h3 {
+        position: relative;
+        padding-right: 0.6rem;
+        margin-right: 0.6rem;
+        &:before {
+          content: "";
+          position: absolute;
+          right: -3px;
+          top: calc(50% - 1.5px);
+          width: 3px;
+          height: 4px;
+          background: rgba($white, 0.5);
+          border-radius: 100%;
+        }
+      }
     }
     .actions {
       display: grid;
@@ -150,6 +165,12 @@
           color: $blue;
           svg {
             fill: $blue;
+          }
+        }
+        &.likes.liked {
+          color: $red;
+          svg {
+            fill: $red;
           }
         }
       }
